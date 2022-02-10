@@ -17,6 +17,9 @@
 
 # Install Instructions 
 
+Install [Vim Plug](https://github.com/junegunn/vim-plug) 
+then 
+
 ```
 git clone https://github.com/helium18/nvimconf.git 
 mv nvimconf nvim
