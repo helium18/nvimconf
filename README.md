@@ -18,7 +18,7 @@
 # Install Instructions 
 
 ```
-gitclone https://github.com/helium18/nvimconf.git 
+git clone https://github.com/helium18/nvimconf.git 
 mv nvimconf nvim
 mv nvim ~/.config
 ``` 
