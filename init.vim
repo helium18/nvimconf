@@ -6,6 +6,7 @@ set hlsearch                " highlight search results
 set tabstop=4               " number of columns occupied by a tab character
 set softtabstop=4           " see multiple spaces as tabstops so <BS> does the right thing
 set expandtab               " converts tabs to white space
+set encoding=UTF-8          " encoding
 set shiftwidth=4            " width for autoindents
 set autoindent              " indent a new line the same amount as the line just typed
 set number                  " add line numbers
@@ -19,6 +20,16 @@ filetype plugin indent on   " allows auto-indenting depending on file type
 nmap <leader><Tab> :bnext<CR>
 map <leader><S-Tab> :bprevious<CR>
 
+" copy and paste from clipboard
+map <leader>y "+y
+map <leader>v "+p
+
+" pane navigation
+map <c-k> :wincmd<Space>k<CR>
+map <c-j> :wincmd<Space>j<CR>
+map <c-h> :wincmd<Space>h<CR>
+map <c-l> :wincmd<Space>l<CR>
+
 " remove colorful boreder pane  
 highlight VertSplit ctermbg=NONE 
 highlight VertSplit ctermfg=NONE
@@ -26,6 +37,10 @@ highlight VertSplit ctermfg=NONE
 syntax on                   " syntax highlighting
 
 autocmd VimEnter * set mouse=n " mouse events
+autocmd VimEnter * hi CocHintSign ctermfg=Gray
+" autocmd VimEnter * hi Normal guibg=None ctermbg=None
+" autocmd VimEnter * hi airline_c  ctermbg=NONE guibg=NONE
+" autocmd VimEnter * hi airline_tabfill ctermbg=NONE guibg=NONE
 
 " --------------------------------------------------------------
 " plugins
@@ -37,17 +52,24 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'scrooloose/nerdtree'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'godlygeek/tabular'
+Plug 'ap/vim-css-color'
 Plug 'alvan/vim-closetag'
-Plug 'Yggdroot/indentLine'
 Plug 'jacoborus/tender.vim'
+Plug 'Yggdroot/indentLine'
+Plug 'edkolev/tmuxline.vim'
+Plug 'ryanoasis/vim-devicons'
+Plug 'cespare/vim-toml'
 Plug 'neoclide/jsonc.vim'
+Plug 'psliwka/vim-smoothie'
 
 call plug#end()
 
 let g:indentLine_char = '▏'
 
 let g:airline_powerline_fonts=1
-let g:airline#extensions#tabline#enabled = 1
+let g:airline_separators=1
+let g:airline#extensions#tabline#enabled = 0
+" let g:tmuxline_powerline_separators = 0
 let g:airline_theme = 'minimalist'
 
 " Enable tender colorscheme 
@@ -171,5 +193,28 @@ let g:closetag_shortcut = '>'
 " Add > at current position without closing the current tag, default is ''
 "
 let g:closetag_close_shortcut = '<leader>>'
+
+" ---------------------------------------------
+" Tmuxline
+let g:tmuxline_powerline_separators = 1
+
+let g:tmuxline_preset = {
+      \'a'    : '#h',
+      \'win'  : '#W',
+      \'cwin' : '#W',
+      \'options': {
+        \'status-justify': 'left'}
+      \}
+
+" let g:tmuxline_preset = {
+"       \'a'    : '#S',
+"       \'b'    : '#W',
+"       \'c'    : '#H',
+"       \'win'  : '#W',
+"       \'cwin' : '#W',
+"       \'x'    : '%a',
+"       \'y'    : '#W %R',
+"       \'z'    : '#H'}
+
 
 " ---------------------------------------------
