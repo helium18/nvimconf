@@ -17,8 +17,8 @@ set colorcolumn=0
 filetype plugin indent on   " allows auto-indenting depending on file type
 
 " switch between tabs
-nmap <leader><Tab> :bnext<CR>
-map <leader><S-Tab> :bprevious<CR>
+nmap <C-Tab> :bnext<CR>
+nmap <C-S-Tab> :bprevious<CR>
 
 " copy and paste from clipboard
 map <leader>y "+y
@@ -53,6 +53,8 @@ Plug 'scrooloose/nerdtree'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'godlygeek/tabular'
 Plug 'ap/vim-css-color'
+Plug 'bhurlow/vim-parinfer'
+Plug 'elkowar/yuck.vim'
 Plug 'alvan/vim-closetag'
 Plug 'jacoborus/tender.vim'
 Plug 'Yggdroot/indentLine'
