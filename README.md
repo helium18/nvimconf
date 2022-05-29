@@ -1,10 +1,13 @@
-# nvimconf
+# Deprecated 
+Now integrated with [nix-dots](https://github.com/helium18/nix-dots) and [i3-dots](https://github.com/helium18/i3-dots)
+
+## nvimconf
  
  Neovim Config
  
  ![image](https://user-images.githubusercontent.com/86223025/153351059-d5905b19-92e6-40f3-8592-f74b866a3612.png)
 
-## Key Points
+### Key Points
 1. Goes well with Adwaita - Uses the `Tender` theme with the `minimalist` airline theme.
 
 2. Preconfigured for: 
@@ -15,7 +18,7 @@
  - Css
 3. Coc lsp which gives vscode like completions (both of them have the same backend). 
 
-# Install Instructions 
+### Install Instructions 
 
 Install [Vim Plug](https://github.com/junegunn/vim-plug) 
 then 
